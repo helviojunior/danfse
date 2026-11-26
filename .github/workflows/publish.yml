@@ -1,10 +1,10 @@
 name: Publish to PyPI
 
 # Publica no PyPI ao criar uma tag vX.Y.Z, usando um token da API do PyPI
-# guardado no secret PYPI_API_TOKEN do repositório.
-# (Crie o token em https://pypi.org/manage/account/token/ — escopo "Entire
-#  account" no primeiro envio, pois o projeto ainda não existe — e adicione em
-#  Settings → Secrets and variables → Actions → New repository secret.)
+# guardado no secret PROD_PYPI_PASSWORD do repositório.
+# (Token criado em https://pypi.org/manage/account/token/; no primeiro envio
+#  precisa ser de escopo "Entire account" — depois pode ser restrito ao
+#  projeto. Há também TEST_PYPI_PASSWORD para publicar no TestPyPI, se desejado.)
 
 on:
   push:
@@ -43,4 +43,4 @@ jobs:
       - name: Publica no PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          password: ${{ secrets.PROD_PYPI_PASSWORD }}
