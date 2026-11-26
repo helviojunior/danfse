@@ -5,7 +5,7 @@ do **XML** da NFS-e, em Python.
 
 Port para Python da biblioteca PHP
 [`guilhermecfviana/danfse-nacional`](https://github.com/guilhermecfviana/danfse-nacional)
-(MIT). Renderiza o leiaute oficial **DANFSe v2.0** via HTML + CSS com
+(MIT). Renderiza o layout oficial **DANFSe v2.0** via HTML + CSS com
 [WeasyPrint](https://weasyprint.org/), com QR Code de consulta pública.
 
 > Contexto: o serviço de geração de DANFSe (PDF) do gov.br foi descontinuado.
@@ -81,11 +81,11 @@ danfse nota.xml -o danfse.pdf
 danfse nota.xml --watermark cancelada
 ```
 
-## Notas sobre o leiaute
+## Notas sobre o layout
 
 - Notas em **homologação** (`tpAmb = 2`) recebem marca d'água "HOMOLOGAÇÃO" e o
   aviso "NFS-e SEM VALIDADE JURÍDICA".
-- Grupos opcionais do leiaute (intermediário, destinatário, IBS/CBS) só são
+- Grupos opcionais do layout (intermediário, destinatário, IBS/CBS) só são
   exibidos quando presentes no XML.
 - O QR Code aponta para a consulta pública oficial:
   `https://www.nfse.gov.br/ConsultaPublica/?tpc=1&chave={chave}`.

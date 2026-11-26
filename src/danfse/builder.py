@@ -132,7 +132,7 @@ def build_data(nfse: dict) -> dict:
     valores_nfse = _node(inf, "valores")
     desc_cond_incond = _node(valores, "vDescCondIncond")
 
-    # Grupos IBS/CBS e destinatário (podem não existir no leiaute atual).
+    # Grupos IBS/CBS e destinatário (podem não existir no layout atual).
     ibscbs = _node(inf, "IBSCBS")
     ibscbs_val = _node(ibscbs, "valores")
     tot_cibs = _node(ibscbs, "totCIBS")
@@ -201,7 +201,7 @@ def build_data(nfse: dict) -> dict:
             f"Federais: {tot_trib_fed}; Estaduais: {tot_trib_est}; Municipais: {tot_trib_mun};"
         )
 
-    # Informações complementares (união dos campos, na ordem do leiaute).
+    # Informações complementares (união dos campos, na ordem do layout).
     item_ped = _txt(info_compl, "gItemPed", "xItemPed")
     partes = [
         ("Inf. Cont.", _txt(info_compl, "xInfComp").strip()),

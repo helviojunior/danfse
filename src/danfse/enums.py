@@ -1,4 +1,4 @@
-"""Mapas de rótulos dos códigos do leiaute da NFS-e Nacional.
+"""Mapas de rótulos dos códigos do layout da NFS-e Nacional.
 
 Port dos enums de ``src/Danfse/Enums`` (guilhermecfviana/danfse-nacional, MIT).
 Cada ``label_for`` recebe o valor cru do XML (string) e devolve o rótulo humano,
