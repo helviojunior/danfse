@@ -6,7 +6,6 @@ import mimetypes
 from functools import lru_cache
 from importlib import resources
 from pathlib import Path
-from typing import Union
 
 from .builder import build_data
 from .options import Options
@@ -15,7 +14,7 @@ from .qrcode_util import qr_data_uri
 from .templating import render
 
 TEMPLATE = "danfse.html"
-XmlInput = Union[str, bytes]
+XmlInput = str | bytes
 
 
 @lru_cache(maxsize=1)
