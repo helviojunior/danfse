@@ -25,7 +25,8 @@ def _assert_pdf(pdf: bytes, min_pages: int = 1):
 def test_generate_from_file():
     reader = _assert_pdf(generate_from_file(FIXTURE))
     text = "".join(page.extract_text() or "" for page in reader.pages)
-    assert "KRYPTON" in text.upper()
+    assert "PRESTADORA" in text.upper()
+    assert "CURITIBA" in text.upper()
     assert "DANFSE" in text.upper()
     assert "117,60" in text
 
