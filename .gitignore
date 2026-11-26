@@ -25,4 +25,4 @@ htmlcov/
 .vscode/
 
 # Preview/artefatos locais
-danfse-preview*.png
+/danfse-*.png

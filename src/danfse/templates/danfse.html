@@ -145,61 +145,69 @@
 
     <!-- Identificação (DADOS DA NFS-e) -->
     <div class="bordered-section first-section">
-        <table style="min-height: 110px;">
+        <table>
             <tr>
-                <td colspan="3">
-                    <span class="label label-id">Chave de Acesso da NFS-e</span>
-                    <span class="value">{{ data.chave_acesso }}</span>
+                <!-- Coluna de dados -->
+                <td style="width: 75%; vertical-align: top; padding: 0;">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                <span class="label label-id">Chave de Acesso da NFS-e</span>
+                                <span class="value">{{ data.chave_acesso }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 33%; padding-top: 8pt;">
+                                <span class="label label-id">Número da NFS-e</span>
+                                <span class="value">{{ data.numero_nfse }}</span>
+                            </td>
+                            <td style="width: 33%; padding-top: 8pt;">
+                                <span class="label label-id">Competência da NFS-e</span>
+                                <span class="value">{{ data.competencia }}</span>
+                            </td>
+                            <td style="width: 34%; padding-top: 8pt;">
+                                <span class="label label-id">Data e Hora da emissão da NFS-e</span>
+                                <span class="value">{{ data.emissao_nfse }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 4pt;">
+                                <span class="label label-id">Número do DPS</span>
+                                <span class="value">{{ data.numero_dps }}</span>
+                            </td>
+                            <td style="padding-top: 4pt;">
+                                <span class="label label-id">Série do DPS</span>
+                                <span class="value">{{ data.serie_dps }}</span>
+                            </td>
+                            <td style="padding-top: 4pt;">
+                                <span class="label label-id">Data e Hora da emissão da DPS</span>
+                                <span class="value">{{ data.emissao_dps }}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="shaded">
+                                <span class="label label-id">Emitente da NFS-e</span>
+                                <span class="value">{{ data.emitente_nfse }}</span>
+                            </td>
+                            <td>
+                                <span class="label label-id">Situação da NFS-e</span>
+                                <span class="value">{{ data.situacao }}</span>
+                            </td>
+                            <td>
+                                <span class="label label-id">Finalidade</span>
+                                <span class="value">{{ data.finalidade }}</span>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
-                <td style="width: 25%; vertical-align: top;" rowspan="3">
+                <!-- Coluna do QR (independente, sem rowspan) -->
+                <td style="width: 25%; vertical-align: top; padding: 2pt 0 0 2pt;">
                     <div class="qr-container">
                         <img src="{{ qr_code }}" alt="QR Code" style="width: 70px; height: 70px; display: block; margin: 0 auto;" />
                         <div class="qr-caption">
                             A autenticidade desta NFS-e pode ser verificada pela leitura deste código QR ou pela consulta da chave de acesso no portal nacional da NFS-e
                         </div>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 25%; padding-top: 8pt;">
-                    <span class="label label-id">Número da NFS-e</span>
-                    <span class="value">{{ data.numero_nfse }}</span>
-                </td>
-                <td style="width: 25%; padding-top: 8pt;">
-                    <span class="label label-id">Competência da NFS-e</span>
-                    <span class="value">{{ data.competencia }}</span>
-                </td>
-                <td style="width: 25%; padding-top: 8pt;">
-                    <span class="label label-id">Data e Hora da emissão da NFS-e</span>
-                    <span class="value">{{ data.emissao_nfse }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td style="padding-top: 4pt;">
-                    <span class="label label-id">Número do DPS</span>
-                    <span class="value">{{ data.numero_dps }}</span>
-                </td>
-                <td style="padding-top: 4pt;">
-                    <span class="label label-id">Série do DPS</span>
-                    <span class="value">{{ data.serie_dps }}</span>
-                </td>
-                <td style="padding-top: 4pt;">
-                    <span class="label label-id">Data e Hora da emissão da DPS</span>
-                    <span class="value">{{ data.emissao_dps }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="shaded">
-                    <span class="label label-id">Emitente da NFS-e</span>
-                    <span class="value">{{ data.emitente_nfse }}</span>
-                </td>
-                <td>
-                    <span class="label label-id">Situação da NFS-e</span>
-                    <span class="value">{{ data.situacao }}</span>
-                </td>
-                <td>
-                    <span class="label label-id">Finalidade</span>
-                    <span class="value">{{ data.finalidade }}</span>
                 </td>
             </tr>
         </table>
