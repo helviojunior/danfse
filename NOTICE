@@ -1,0 +1,28 @@
+danfse
+======
+
+Este projeto é um port para Python da biblioteca PHP de geração da DANFSe da
+NFS-e Nacional:
+
+    guilhermecfviana/danfse-nacional
+    https://github.com/guilhermecfviana/danfse-nacional
+    Licença: MIT — Copyright (c) 2026 Guilherme Viana
+
+O layout da DANFSe, o mapeamento de campos do XML, os rótulos dos códigos do
+leiaute e o QR Code de consulta pública foram portados a partir desse projeto.
+Agradecimentos ao autor original.
+
+Dados e ativos de terceiros
+---------------------------
+
+- Tabela de municípios: códigos do IBGE (domínio público).
+- Logo da NFS-e Nacional (assets/logos/nfse.png): marca do portal nacional da
+  NFS-e (gov.br), reutilizada do projeto de referência.
+
+Fontes
+------
+
+Esta biblioteca NÃO embute as fontes proprietárias Arial / Microsoft Sans Serif.
+O template referencia a pilha "Liberation Sans" (metric-compatível com Arial),
+resolvida contra as fontes instaladas no sistema pelo WeasyPrint. Para melhor
+fidelidade, instale o pacote de fontes Liberation (ex.: `fonts-liberation`).

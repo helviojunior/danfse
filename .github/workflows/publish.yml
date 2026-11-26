@@ -1,0 +1,45 @@
+name: Publish to PyPI
+
+# Publica no PyPI via Trusted Publishing (OIDC) ao criar uma tag vX.Y.Z.
+# Nenhum token/segredo fica no repositório: configure o Trusted Publisher em
+# https://pypi.org/manage/account/publishing/ apontando para este workflow.
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build sdist e wheel
+        run: |
+          python -m pip install --upgrade build
+          python -m build
+      - name: Verifica os artefatos
+        run: |
+          python -m pip install --upgrade twine
+          twine check dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write  # necessário para o Trusted Publishing (OIDC)
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - name: Publica no PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

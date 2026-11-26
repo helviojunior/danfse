@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Testes / cobertura
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Saídas locais
+*.pdf
+!docs/**/*.pdf
+
+# SO / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Preview/artefatos locais
+danfse-preview*.png
