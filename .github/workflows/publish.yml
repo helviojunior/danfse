@@ -1,8 +1,10 @@
 name: Publish to PyPI
 
-# Publica no PyPI via Trusted Publishing (OIDC) ao criar uma tag vX.Y.Z.
-# Nenhum token/segredo fica no repositório: configure o Trusted Publisher em
-# https://pypi.org/manage/account/publishing/ apontando para este workflow.
+# Publica no PyPI ao criar uma tag vX.Y.Z, usando um token da API do PyPI
+# guardado no secret PYPI_API_TOKEN do repositório.
+# (Crie o token em https://pypi.org/manage/account/token/ — escopo "Entire
+#  account" no primeiro envio, pois o projeto ainda não existe — e adicione em
+#  Settings → Secrets and variables → Actions → New repository secret.)
 
 on:
   push:
@@ -33,9 +35,6 @@ jobs:
   publish:
     needs: build
     runs-on: ubuntu-latest
-    environment: pypi
-    permissions:
-      id-token: write  # necessário para o Trusted Publishing (OIDC)
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -43,3 +42,5 @@ jobs:
           path: dist/
       - name: Publica no PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
