@@ -13,7 +13,7 @@ jobs:
       matrix:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Instala libs nativas do WeasyPrint
         run: |
@@ -22,7 +22,7 @@ jobs:
             libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 \
             libffi-dev libcairo2 fonts-liberation
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
 
